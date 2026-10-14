@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520" role="img" aria-label="Lethal trifecta for AI agents">
+  <rect width="900" height="520" rx="16" fill="#0b1020"/>
+  <text x="450" y="46" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="26" font-weight="700" fill="#f8fafc">The Lethal Trifecta of AI Agents</text>
+  <text x="450" y="74" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#94a3b8">When all three conditions meet, data exfiltration is almost guaranteed</text>
+
+  <g fill-opacity="0.28" stroke-width="3">
+    <circle cx="360" cy="215" r="130" fill="#22d3ee" stroke="#22d3ee" transform="translate(0,95)"/>
+    <circle cx="540" cy="215" r="130" fill="#a78bfa" stroke="#a78bfa" transform="translate(0,95)"/>
+    <circle cx="450" cy="135" r="130" fill="#fb7185" stroke="#fb7185" transform="translate(0,95)"/>
+  </g>
+
+  <g font-family="Inter,Segoe UI,Arial,sans-serif" text-anchor="middle" fill="#f8fafc">
+    <text x="450" y="188" font-size="17" font-weight="700">Untrusted</text>
+    <text x="450" y="209" font-size="17" font-weight="700">content</text>
+    <text x="450" y="232" font-size="12" fill="#fecdd3">web, email, tickets, logs, RAG</text>
+
+    <text x="290" y="386" font-size="17" font-weight="700">Private</text>
+    <text x="290" y="407" font-size="17" font-weight="700">data</text>
+    <text x="290" y="430" font-size="12" fill="#a5f3fc">secrets, PII, code, documents</text>
+
+    <text x="610" y="386" font-size="17" font-weight="700">External</text>
+    <text x="610" y="407" font-size="17" font-weight="700">communication</text>
+    <text x="610" y="430" font-size="12" fill="#ddd6fe">HTTP, email, links, git</text>
+
+    <text x="450" y="300" font-size="30" font-weight="800" fill="#fef08a">!</text>
+    <text x="450" y="324" font-size="13" font-weight="700" fill="#fef08a">LEAK</text>
+  </g>
+
+  <text x="450" y="500" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#6ee7b7">Defense: remove at least one leg, or put a hard control between them</text>
+</svg>
