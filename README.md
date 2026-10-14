@@ -4,7 +4,8 @@
 
 <p align="center">
   <a href="LICENSE"><img alt="License" src="https://img.shields.io/badge/license-MIT-22d3ee?style=flat-square"></a>
-  <img alt="Skills" src="https://img.shields.io/badge/skills-3-a78bfa?style=flat-square">
+  <img alt="Skills" src="https://img.shields.io/badge/skills-5-a78bfa?style=flat-square">
+  <img alt="Articles" src="https://img.shields.io/badge/articles-3-22c55e?style=flat-square">
   <img alt="Claude Code" src="https://img.shields.io/badge/Claude%20Code-compatible-f97316?style=flat-square">
   <img alt="OWASP LLM Top 10" src="https://img.shields.io/badge/OWASP-LLM%20Top%2010%20(2025)-ef4444?style=flat-square">
   <img alt="MITRE ATLAS" src="https://img.shields.io/badge/MITRE-ATLAS-0ea5e9?style=flat-square">
@@ -23,13 +24,15 @@ An AI agent is an LLM with **tools, memory, and access to external data**. Any u
 
 These skills turn that approach into a repeatable workflow.
 
-## Three skills
+## Five skills
 
 | Skill | Role | What it does |
 |---|---|---|
 | [`ai-agent-threat-modeling`](skills/ai-agent-threat-modeling/SKILL.md) | 🧭 Architect | System description, data flows, trust boundaries, STRIDE + OWASP LLM, risk register |
 | [`ai-agent-redteam`](skills/ai-agent-redteam/SKILL.md) | 🔴 Red team | Authorized testing: prompt injection, MCP/tool poisoning, exfiltration, reporting |
 | [`ai-agent-defense`](skills/ai-agent-defense/SKILL.md) | 🟢 Blue team | Least privilege, isolation, human-in-the-loop, egress control, MCP security, checklist |
+| [`mcp-server-audit`](skills/mcp-server-audit/SKILL.md) | 🔎 Reviewer | Vet an MCP server before connecting it: tool poisoning, rug pull, permissions, verdict |
+| [`ai-agent-incident-response`](skills/ai-agent-incident-response/SKILL.md) | 🚨 Responder | Contain, preserve evidence, investigate and recover from an agent compromise |
 
 ## How they work together
 
@@ -39,9 +42,14 @@ flowchart LR
   DF --> RT["🔴 Red Team<br/>practical verification"]
   RT -->|findings| TM
   RT -->|regressions| DF
+  DF -.->|vet third-party servers| MA["🔎 MCP Audit"]
+  RT -.->|when it goes wrong| IR["🚨 Incident Response"]
+  IR -->|lessons| TM
   style TM fill:#0e7490,stroke:#22d3ee,color:#fff
   style DF fill:#065f46,stroke:#34d399,color:#fff
   style RT fill:#9f1239,stroke:#fb7185,color:#fff
+  style MA fill:#4c1d95,stroke:#a78bfa,color:#fff
+  style IR fill:#92400e,stroke:#fbbf24,color:#fff
 ```
 
 Repeat the loop after every change: a new tool, a new data source, a model swap.
@@ -93,6 +101,16 @@ Impact is determined by **tool permissions**, not by how "smart" the model is. R
 
 All proof of impact relies on safe **canary values**, never on real damage.
 
+## Articles
+
+Long-form write-ups that explain the ideas behind the skills.
+
+| Article | What it covers |
+|---|---|
+| [The Lethal Trifecta: Why AI Agents Leak Data, and the Cheapest Way to Stop It](articles/01-lethal-trifecta.md) | Private data, untrusted content and external communication, and how to break the triangle |
+| [Your Logs Can Talk: Prompt Injection in an LLM-Assisted SOC](articles/02-your-logs-can-talk.md) | Keeping an LLM advisory in incident triage: sanitizing, output policy, fail-closed design, and a test that was too weak |
+| [How to Audit an MCP Server Before You Connect It](articles/03-audit-an-mcp-server.md) | Tool poisoning, rug pulls, tool shadowing, a six-step review, and a script that pins tool definitions |
+
 ## Installation
 
 ```bash
@@ -114,17 +132,22 @@ Skills are picked up by their description or invoked explicitly:
 Build a threat model for my MCP agent
 Run a red team review of this agent using the ai-agent-redteam methodology
 Check this agent's architecture against the ai-agent-defense checklist
+Audit this MCP server before I connect it to my agent
+We think our agent leaked data through a poisoned ticket. Walk me through incident response
 ```
 
 ## Repository layout
 
 ```text
 ai-agent-security-skills/
+├── articles/                    # long-form write-ups
 ├── assets/                      # documentation graphics
 ├── skills/
 │   ├── ai-agent-threat-modeling/SKILL.md
 │   ├── ai-agent-redteam/SKILL.md
-│   └── ai-agent-defense/SKILL.md
+│   ├── ai-agent-defense/SKILL.md
+│   ├── mcp-server-audit/SKILL.md
+│   └── ai-agent-incident-response/SKILL.md
 ├── LICENSE
 └── README.md
 ```
