@@ -5,7 +5,7 @@
 <p align="center">
   <a href="LICENSE"><img alt="License" src="https://img.shields.io/badge/license-MIT-22d3ee?style=flat-square"></a>
   <img alt="Skills" src="https://img.shields.io/badge/skills-5-a78bfa?style=flat-square">
-  <img alt="Articles" src="https://img.shields.io/badge/articles-5-22c55e?style=flat-square">
+  <img alt="Articles" src="https://img.shields.io/badge/articles-7-22c55e?style=flat-square">
   <img alt="Claude Code" src="https://img.shields.io/badge/Claude%20Code-compatible-f97316?style=flat-square">
   <img alt="OWASP LLM Top 10" src="https://img.shields.io/badge/OWASP-LLM%20Top%2010%20(2025)-ef4444?style=flat-square">
   <img alt="MITRE ATLAS" src="https://img.shields.io/badge/MITRE-ATLAS-0ea5e9?style=flat-square">
@@ -112,6 +112,8 @@ Long-form write-ups that explain the ideas behind the skills.
 | [How to Audit an MCP Server Before You Connect It](articles/03-audit-an-mcp-server.md) | Tool poisoning, rug pulls, tool shadowing, a six-step review, and a script that pins tool definitions |
 | [When Your Agent Gets Hijacked: An Incident Response Playbook](articles/04-agent-incident-response.md) | Containment order, evidence to preserve, transcript triage with a scanner script, recovery, and a postmortem |
 | [Guardrails Are a Layer, Not a Wall: How to Measure Them Honestly](articles/05-measuring-guardrails.md) | Miss rate vs false block rate, sample size and confidence intervals, why retries compound, and a reporting script |
+| [Invisible Ink: How Hidden Unicode Smuggles Instructions Past Human Reviewers](articles/06-invisible-ink.md) | Unicode tag characters, a hide/reveal demo, a sanitizer that survives the emoji-flag trap, and where to strip |
+| [Your AI Coding Agent Reads Your Repo, and Your Repo Reads Back](articles/07-coding-agent-attack-surface.md) | Why coding agents have the trifecta by default, hardening that works, and a canary script to test your own agent |
 
 ## Installation
 
