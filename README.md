@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.svg" alt="AI Agent Security Skills" width="100%"/>
+  <img src="assets/banner-en.svg" alt="AI Agent Security Skills" width="100%"/>
 </p>
 
 <p align="center">
@@ -49,7 +49,7 @@ Repeat the loop after every change: a new tool, a new data source, a model swap.
 ## The key idea: the lethal trifecta
 
 <p align="center">
-  <img src="assets/lethal-trifecta.svg" alt="Lethal trifecta" width="640"/>
+  <img src="assets/lethal-trifecta-en.svg" alt="Lethal trifecta" width="640"/>
 </p>
 
 If an agent has **private data**, **untrusted content**, and **external communication** at the same time, exfiltration is almost guaranteed. The first check in any audit: are all three present? The best defense is to remove at least one leg.
@@ -73,7 +73,7 @@ flowchart TB
 ## Risk rating
 
 <p align="center">
-  <img src="assets/severity-matrix.svg" alt="Risk matrix" width="640"/>
+  <img src="assets/severity-matrix-en.svg" alt="Risk matrix" width="640"/>
 </p>
 
 Impact is determined by **tool permissions**, not by how "smart" the model is. Rate irreversible actions higher.
